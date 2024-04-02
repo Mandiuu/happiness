@@ -1,52 +1,129 @@
-.scrolly-container {
-    position: relative;
-    margin-bottom: 1.2em;
-}
-
-.sticky-thing {
-    position: sticky;
-    top: 0;
-    transform: translate(0px, 0px);
-    z-index: 0;
-    height: 120svh;
-    width: 100vw;
+/* General styles */
+body {
+    background-color: #F6F3EA;
     margin: 0;
-    overflow: hidden;
-    /* Center everything inside */
-    /* display: flex;
-    justify-content: center;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden; */
+    font-size: 20px;
+    font-family: 'Barlow', 'Times New Roman', Times, serif;
+    text-rendering: optimizeLegibility;
 }
 
-.sticky-thing > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;  
+.content {
+    max-width: 640px;
+    margin: auto;
 }
 
-.video-container {
-    position: sticky;
-    top: 0;
-    z-index: -1;
+.header {
+    padding: 3em 0;
 }
 
-.scrolly-container video {
-    position: absolute;
-    top: 0;
-    height: auto;
-    width: 100%;
+a {
+    color: #f05349;
 }
 
-.sticky-thing iframe {
-    position: absolute;
-    top: 0;
+.footer {
+    background: #F6F3EA;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 4em;
+    padding: 4em 0;
+}
+
+figure {
+    margin: 0;
+    padding-bottom: 1.2em;
+}
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 0.5em;
+    color: #666;
+}
+
+h1 {
+    font-family: 'Bungee Shade', Georgia, serif;
+    font-weight: bold;
+    font-size: 6em;
+    line-height: 0.8;
+}
+
+.subhead {
+    font-family: 'Bungee Shade', Georgia, serif;
+}
+
+.full-width figure {
+    text-align: center;
+}
+
+iframe,
+img,
+video {
     max-width: 100%;
-    min-height: 100vh;
 }
 
+p {
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 1.2em;
+}
+
+ul {
+    margin: 0;
+    padding-bottom: 1em;
+    line-height: 1.6;
+}
+
+iframe {
+    padding-bottom: 1.2em;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    background: #fff880;
+}
+
+/* Margin on mobile */
+@media (max-width: 640px) {
+    body {
+        font-size: 18px;
+    }
+
+    .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+}
+
+/* Header styles */
+.header.with-image-bg {
+    position: relative;
+    background-size: cover;
+    margin-bottom: 2em;
+    min-height: 85vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding-top: 20px; 
+    color: white;
+    text-shadow: 0px 0px 30px black,
+        0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-image: url('Green.svg'); 
+}
+
+.header .content {
+    max-width: 640px;
+    margin: auto;
+    padding: 0 20px; 
+}
+
+h1,
+.subhead {
+    text-align: left;
+    padding-left: 20px; 
+}
+
+/* Step styles */
 .steps-container {
     transform: translate3d(0,0,0);
     position: relative;
@@ -55,29 +132,22 @@
     max-width: 35rem;
     margin: 0 auto;
     padding-bottom: 4em;
-}
-
-
-.steps-container {
-    display: flex; /* or 'grid' depending on your layout */
-    flex-direction: column; /* ensures items are laid out vertically */
-    align-items: stretch; /* stretches items to fit the container width */
-    gap: 20px; /* optional: adds space between items */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
 }
 
 .step {
     border: 1px solid #ccc; 
     padding: 20px; 
     overflow: auto; 
-        background-color: #FFC44F;
-
-
-.step {
+    background-color: #FFC44F;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50svh;
+    margin-bottom: 50vh;
     transform: translate(0px, 0px);
 }
 
@@ -97,41 +167,36 @@
     padding: 1.2em !important;
     background-color: #FFC44F;
     font-weight: bold; 
-    }
 }
 
+/* Sticky elements */
+.scrolly-container {
+    position: relative;
+    margin-bottom: 1.2em;
+}
+
+.sticky-thing {
+    position: sticky;
+    top: 0;
+    transform: translate(0px, 0px);
+    z-index: 0;
+    height: 120vh;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+}
+
+.sticky-thing > img,
 .sticky-thing > canvas {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;  
 }
 
-/* When it's less than 700 pixels wide, do normal scrollytelling */
-
-@media only screen and (min-width: 700px) {
-    .scrolly-container.side-by-side {
-        display: flex;
-    }
-
-    .scrolly-container.side-by-side>div {
-        flex-basis: 0;
-        flex-grow: 1;
-        flex-shrink: 1;
-        padding: 0.75em;
-    }
-
-    .scrolly-container.side-by-side .scrolly-overlay {
-        margin-top: 70vh;
-        order: 0;
-        /* Change these to adjust sizing options */
-        min-width: 15rem;
-        max-width: 20rem;
-    }
-
-    .scrolly-container.side-by-side .sticky-thing {
-        order: 1;
-        flex-grow: 2;
-    }
-
+.video-container,
+.scrolly-container video {
+    position: sticky;
+    top: 0;
+    z-index: -1;
 }
