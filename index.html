@@ -131,61 +131,50 @@
                  padding-right: 0.5em;
              }
          }
+         
      </style>
-     <style>
-         .with-image-bg,
-         .with-video-bg {
-             position: relative;
-             background-size: cover;
-             margin-bottom: 2em;
- 
-             /* Center everything inside */
-             min-height: 85svh;
-             display: flex;
-             justify-content: center;
-             align-items: flex-start;
- 
-             /* White text with a shadow */
-             color: white;
-             text-shadow: 0px 0px 30px black,
-                 0px 0px 10px rgba(0, 0, 0, 0.5);
-         }
- 
-         .with-image-bg {
-             background-image: url('Green.svg');
-         }
- 
-         .video-background {
-             position: absolute;
-             top: 0;
-             width: 100%;
-             height: 100%;
-             z-index: -1;
-         }
- 
-         .video-background video {
-             object-fit: cover;
-             width: 100%;
-             height: 100%;
-         }
-     </style>
+  <style>
+    .header.with-image-bg {
+        position: relative;
+        background-size: cover;
+        margin-bottom: 2em;
+        min-height: 85vh; /* Adjusted for viewport height, ensures enough space */
+        display: flex;
+        flex-direction: column; /* Ensures vertical layout */
+        justify-content: flex-start; /* Aligns content to the top */
+        align-items: flex-start; /* Aligns items to the start, adjusting as per need */
+        padding-top: 20px; /* Adds some space at the top */
+        color: white;
+        text-shadow: 0px 0px 30px black,
+            0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-image: url('images/Green.svg'); /* Ensure this path is correct */
+    }
+
+    .header .content {
+        max-width: 640px;
+        margin: auto;
+        padding: 0 20px; /* Adds padding to ensure content does not touch the sides */
+    }
+
+    h1, .subhead {
+        text-align: left; /* Aligns the text to the left */
+    }
+</style>
+
  </head>
  
  <body>
-     <div class="header with-image-bg">
-         <div class="content">
-             <h1>What makes us happy</h1>
-             <p class="subhead">According to the World Happiness Report</p>
-         </div>
-     </div> 
-
-
-
-    <div class="content">
-    
-        <div class="byline">
-            <p>By <a href="https://mandiuu.github.io/">Carla Mandiola</a>😗</p>
+    <div class="header with-image-bg">
+       
+            <h1>What makes us happy</h1>
+            <p class="subhead">According to the World Happiness Report</p>
         </div>
+    </div>
+    
+    <div class="byline">
+        <p>By <a href="https://mandiuu.github.io/">Carla Mandiola</a>😗</p>
+    </div>
+    <div class="content">
         <p>If someone asks you today if you are happy, your answer may be different tomorrow. Happiness changes as events occur, but in 2012, three 
             economists, John Helliwell, Richard Layard, and Jeffrey Sachs, believed they could measure it.
         </p>
